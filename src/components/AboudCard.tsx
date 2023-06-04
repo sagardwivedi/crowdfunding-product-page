@@ -26,7 +26,7 @@ const CardData: RewardCardProps[] = [
 
 const AboudCard = () => {
   return (
-    <Card className="p-10">
+    <Card className="p-6 md:p-10">
       <div className="space-y-8">
         <Heading className="text-start text-lg ">About this project</Heading>
         <Paragraph className="text-start tracking-wide">
