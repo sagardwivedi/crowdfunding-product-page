@@ -5,7 +5,7 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {}
 
 const Card: FC<CardProps> = ({ children, className, ...props }) => {
   return (
-    <div {...props} className={cn("rounded-2xl border bg-white", className)}>
+    <div {...props} className={cn("rounded-xl border bg-white", className)}>
       {children}
     </div>
   );

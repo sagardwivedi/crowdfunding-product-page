@@ -1,11 +1,4 @@
 import "./globals.css";
-import { Commissioner } from "next/font/google";
-
-const commissioner = Commissioner({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  adjustFontFallback: true,
-});
 
 export const metadata = {
   title: "Bamboo",
@@ -19,7 +12,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={commissioner.className}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }

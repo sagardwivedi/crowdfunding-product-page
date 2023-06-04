@@ -26,8 +26,8 @@ const Home = () => {
           priority={true}
         />
       </section>
-      <section className="h-full bg-gray-100">
-        <div className="mx-auto space-y-4 max-w-3xl">
+      <section className="bg-gray-50">
+        <div className="mx-auto w-[90%] max-w-3xl space-y-4 pb-16">
           <TopCard />
           <StatsCard />
           <AboudCard />

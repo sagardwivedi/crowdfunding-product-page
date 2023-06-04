@@ -1,29 +1,36 @@
 import statistics from "@/lib/stats";
 import Card from "@/ui/Card";
-import Heading from "./ui/Heading";
-import Paragraph from "./ui/Paragraph";
+import Heading from "@/ui/Heading";
+import Paragraph from "@/ui/Paragraph";
 
 const StatsCard = () => {
   const { amount, backers, days_left } = statistics();
+
+  const progress = (amount / 100000) * 100;
+
   return (
-    <Card className="p-10">
-      <div className="space-y-5">
-        <div className="flex divide-x">
-          <div className="pr-16">
-            <Heading>${amount.toLocaleString()}</Heading>{" "}
-            <Paragraph>of $100000 backed</Paragraph>
+    <Card className="py-8">
+      <div className="flex items-center justify-center flex-col space-y-5">
+        <div className="flex max-md:divide-y-2 md:divide-x-2">
+          <div>
+            <Heading>${amount.toLocaleString()}</Heading>
+            <Paragraph>of $100,000 backed</Paragraph>
           </div>
-          <div className="px-16">
-            {" "}
-            <Heading>{backers.toLocaleString()}</Heading>{" "}
+          <div>
+            <Heading>{backers}</Heading>
             <Paragraph>total backers</Paragraph>
           </div>
-          <div className="px-16">
-            {" "}
-            <Heading>{days_left}</Heading> <Paragraph>days left</Paragraph>
+          <div>
+            <Heading>{days_left}</Heading>
+            <Paragraph>days left</Paragraph>
           </div>
         </div>
-        <div className="h-5 w-full rounded-full bg-gray-100"></div>
+        <progress
+          className="w-[90%]"
+          value={progress}
+          max={100}
+          color="#3CB4AC"
+        />
       </div>
     </Card>
   );
